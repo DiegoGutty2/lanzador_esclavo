@@ -60,5 +60,10 @@ void recepcion(){
 
 }
 
+/*
+void ejemplo(){
+  int a;
+  }
+*/
 
 
