@@ -1,23 +1,25 @@
 //CODIGO ESCLAVO CONTROLADOR 2 (ARDUINO MEGA)
 int led = 21;
-int Dato = 0;
-//int n = 4095;
 String d;
 int inc = 0;
 int bandera = 0;
-
-  int COHETE_1 = 9;
-  int COHETE_2 = 8;
-  int c = 0;
-  int valor_1 = 0;
-  int valor_2 = 0;
+int COHETE1 = 9;
+int COHETE2 = 8;
+int COHETE3 = 7;
+          //int c = 0;
+long valor0,valor1,valor2,valor3,valor4,valor5,valor6 = 0;
+long valor7,valor8,valor9,valor10,valor11,valor12,valor13 = 0;
+long p = 0;
+long q = 0;
 
 void setup() {
   Serial.begin(9600);
   pinMode(led,OUTPUT);
   digitalWrite(led,LOW);
 
-  pinMode (COHETE_1,INPUT);
+  pinMode (COHETE1,INPUT);
+  pinMode (COHETE2,INPUT);
+  pinMode (COHETE3,INPUT);
 }
 
 void loop() {
@@ -43,13 +45,41 @@ void loop() {
 
 void envio(){
   digitalWrite(led,HIGH);
-  valor_1=digitalRead(COHETE_1);
-  valor_2=digitalRead(COHETE_2);
-  bitWrite(c,0,valor_1);
-  bitWrite(c,1,valor_2);
-  d = String (c);
+  valor1=digitalRead(COHETE1);
+  valor2=digitalRead(COHETE2);
+  valor3=digitalRead(COHETE3);
+  long y=9;
+  long z=9;
+  long a= 1;
+  long b= 1;
+  long c= 1;
+  long d= 1;
+  long e= 1;
+  long f= 1;
+  long g= 1;
+  long h= 1;
+  long i= 1;
+  valor0 = y*1000000; 
+  valor1 = valor1*100000;
+  valor2 = valor2*10000;
+  valor3 = valor3*1000;
+  valor4 = a*100;
+  valor5 = b*10;
+  valor6 = c*1;
+  valor7 = z*1000000; 
+  valor8 = d*100000;
+  valor9 = e*10000;
+  valor10 = f*1000;
+  valor11 = g*100;
+  valor12 = h*10;
+  valor13 = i*1;
+  p = valor0 + valor1 + valor2 + valor3 + valor4 + valor5 + valor6;
+  q = valor7 + valor8 + valor9 + valor10 + valor11 + valor12 + valor13;
+
+  //d = String (c);
       Serial.print("%");
-      Serial.print(d);
+      Serial.print(p);
+      Serial.print(q);
       Serial.print("/");
   delay(200);
   bandera = 0;    
@@ -59,11 +89,3 @@ void envio(){
 void recepcion(){
 
 }
-
-/*
-void ejemplo(){
-  int a;
-  }
-*/
-
-
